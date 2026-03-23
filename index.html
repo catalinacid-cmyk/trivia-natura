@@ -111,8 +111,8 @@
     <div class="card" id="app-container">
         <div id="start-screen">
             <h1>Trivia Natura & Mercado Libre</h1>
-            <h2>¡Demuestra cuánto sabes y gana un super premio!</h2>
-            <p style="margin-bottom: 30px; color: #666; font-size: 0.9rem;">Nota: Debes tener almenos 5 preguntas correctas, hasta agotar stock. Solo tienes un intento.</p>
+            <h2>¡Demuestra cuánto sabes y gana un premio exclusivo!</h2>
+            <p style="margin-bottom: 30px; color: #666; font-size: 0.9rem;">Nota: Debes tener al menos 5 respuestas correctas para ganar. Solo tienes un intento.</p>
             <button class="btn" onclick="startQuiz()">Comenzar Trivia</button>
         </div>
 
@@ -138,7 +138,7 @@
                 correct: "2024"
             },
             {
-                q: "¿Cuál es el claim de la misión de Natura?",
+                q: "¿Cuál es el claims de la misión de Natura?",
                 options: ["Sentirse bien es natural", "Hace Bien Estar Bien", "Belleza con propósito", "El poder de lo natural", "Ninguna de las anteriores"],
                 correct: "Hace Bien Estar Bien"
             },
@@ -221,20 +221,20 @@
             const resultContent = document.getElementById('result-content');
             
             if (score >= 5) {
-                // Ganador (6 de 6)
+                // Ganador (5 o 6 correctas)
                 resultContent.innerHTML = `
                     <div class="result-icon">🏆</div>
                     <h1 style="color: var(--natura-orange);">¡Felicidades!</h1>
-                    <h2>Respondiste perfectamente las ${questions.length} preguntas.</h2>
+                    <h2>Lograste ${score} de ${questions.length} respuestas correctas.</h2>
                     <p>Has ganado el premio exclusivo de Natura y Mercado Libre. Revisa tu correo o contacta a soporte para validarlo.</p>
                 `;
             } else {
-                // Perdedor (< 6)
+                // Perdedor (menos de 5 correctas)
                 resultContent.innerHTML = `
                     <div class="result-icon">😔</div>
                     <h1 style="color: #555;">¡Gracias por participar!</h1>
-                    <h2>Lamentablemente no lograste el puntaje perfecto.</h2>
-                    <p>Recuerda que se debían acertar todas las preguntas para obtener el premio.</p>
+                    <h2>Lograste ${score} de ${questions.length} respuestas correctas.</h2>
+                    <p>Recuerda que necesitabas al menos 5 aciertos para obtener el premio. ¡Mejor suerte a la próxima!</p>
                 `;
             }
         }
