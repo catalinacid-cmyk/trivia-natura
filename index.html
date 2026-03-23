@@ -111,8 +111,8 @@
     <div class="card" id="app-container">
         <div id="start-screen">
             <h1>Trivia Natura & Mercado Libre</h1>
-            <h2>¡Demuestra cuánto sabes y gana un premio exclusivo!</h2>
-            <p style="margin-bottom: 30px; color: #666; font-size: 0.9rem;">Nota: Debes tener todas las respuestas correctas para ganar. Solo tienes un intento.</p>
+            <h2>¡Demuestra cuánto sabes y gana un super premio!</h2>
+            <p style="margin-bottom: 30px; color: #666; font-size: 0.9rem;">Nota: Debes tener almenos 5 preguntas correctas, hasta agotar stock. Solo tienes un intento.</p>
             <button class="btn" onclick="startQuiz()">Comenzar Trivia</button>
         </div>
 
@@ -138,7 +138,7 @@
                 correct: "2024"
             },
             {
-                q: "¿Cuál es el claims de la misión de Natura?",
+                q: "¿Cuál es el claim de la misión de Natura?",
                 options: ["Sentirse bien es natural", "Hace Bien Estar Bien", "Belleza con propósito", "El poder de lo natural", "Ninguna de las anteriores"],
                 correct: "Hace Bien Estar Bien"
             },
@@ -220,7 +220,7 @@
             
             const resultContent = document.getElementById('result-content');
             
-            if (score === questions.length) {
+            if (score >= 5) {
                 // Ganador (6 de 6)
                 resultContent.innerHTML = `
                     <div class="result-icon">🏆</div>
